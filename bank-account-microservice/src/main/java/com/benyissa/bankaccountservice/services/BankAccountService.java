@@ -11,4 +11,5 @@ public interface BankAccountService {
     BankAccountResponseDTO findById(String id);
     BankAccountResponseDTO addAccount(BankAccountRequestDTO bankAccountRequestDTO);
 
+    BankAccountResponseDTO updateAccount(String id, BankAccountRequestDTO bankAccountRequestDTO);
 }

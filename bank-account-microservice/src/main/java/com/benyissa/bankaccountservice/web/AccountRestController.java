@@ -43,13 +43,10 @@ public class AccountRestController {
         return bankAccountService.addAccount(bankAccountRequestDTO);
     }
 
-//    @PutMapping("bankAccounts/{id}")
-//    public BankAccount update(@PathVariable String id, @RequestBody BankAccount bankAccount) {
-//        BankAccount bankAccount1 = bankAccountRepository.findById(id).get();
-//        bankAccount1.setBalance(bankAccount.getBalance());
-//        bankAccount1.setCurrency(bankAccount.getCurrency());
-//        return bankAccountRepository.save(bankAccount1);
-//    }
+    @PutMapping("bankAccounts/{id}")
+    public BankAccountResponseDTO update(@PathVariable String id, @RequestBody BankAccountRequestDTO bankAccount) {
+        return bankAccountService.updateAccount(id, bankAccount);
+    }
 
 
 }
