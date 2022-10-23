@@ -5,8 +5,8 @@
 
 |           N°              |                     Title                     |          Link        |
 |     -----------------    |        ----------------------------------     |       ---------      |
-|           1            |            BankAccount first microservice         | [:link:](TP1 "bank-account-microservice") |
-|           2            |            Customers and Invoices Use Case        | [:link:](TP2 "practical%20training%201") |
+|           1            |            BankAccount first microservice         | [:link:](bank-account-microservice "") |
+|           2            |            Customers and Invoices Use Case        | [:link:](practical%20training%201 "") |
 
 
 
