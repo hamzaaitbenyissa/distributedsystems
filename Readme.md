@@ -6,8 +6,8 @@
 |           N°              |                     Title                     |          Link        |
 |     -----------------    |        ----------------------------------     |       ---------      |
 |           1            |            BankAccount first microservice         | [:link:](bank-account-microservice "") |
-|           2            |            Customers and Invoices         | [:link:](customers-and-invoices "") |
-|           3            |            SOAP Web Services with JAX-WS        | [:link:](soap-web-services-with-jax-ws "") |
+|           2            |            Customers and Invoices         | [:link:](Customers%20and%20Invoices "") |
+|           3            |            SOAP Web Services with JAX-WS        | [:link:](SOAP%20Web%20Services%20with%20JAX-WS "") |
 
 
 
