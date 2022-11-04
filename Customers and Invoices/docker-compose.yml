@@ -1,0 +1,59 @@
+version: "3.1"
+services:
+  eureka:
+    image: hamzaaitbenyissa/ds-tp2-eureka:v1
+    restart: unless-stopped
+    environment:
+      - server.port=8761
+      - eureka.client.fetch-registry=false
+      - eureka.client.register-with-eureka=false
+    ports:
+      - 8761:8761
+  costumer:
+    depends_on:
+      - eureka
+    image: hamzaaitbenyissa/ds-tp2-costumer:v1
+    restart: unless-stopped
+    environment:
+      - server.port=8082
+      - spring.application.name=CUSTOMER-SERVICE
+      - spring.h2.console.enabled=true
+      - spring.cloud.discovery.enabled=true
+      - eureka.instance.prefer-ip-address=true
+      - spring.datasource.url=jdbc:h2:mem:customer-service
+      - eureka.client.service-url.defaultZone=http://eureka:8761/eureka
+    ports:
+      - 8082:8082
+
+  invoice:
+    depends_on:
+      - costumer
+      - eureka
+    image: hamzaaitbenyissa/ds-tp2-invoice:v1
+    restart: unless-stopped
+    environment:
+      - server.port=8084
+      - spring.application.name=INVOICE-SERVICE
+      - spring.h2.console.enabled=true
+      - spring.cloud.discovery.enabled=true
+      - eureka.instance.prefer-ip-address=true
+      - spring.datasource.url=jdbc:h2:mem:invoice-service
+      - eureka.client.service-url.defaultZone=http://eureka:8761/eureka
+    ports:
+      - 8084:8084
+
+  gateway:
+    depends_on:
+      - costumer
+      - invoice
+      - eureka
+    image: hamzaaitbenyissa/ds-tp2-gateway:v1
+    restart: unless-stopped
+    environment:
+      - server.port=9999
+      - spring.application.name=GATEWAY
+      - spring.cloud.discovery.enabled=true
+      - eureka.instance.prefer-ip-address=true
+      - eureka.client.service-url.defaultZone=http://eureka:8761/eureka
+    ports:
+      - 9999:9999
