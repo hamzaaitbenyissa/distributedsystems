@@ -5,8 +5,8 @@ orders - customers - products  Microservices using Spring boot and consul.
 ## Table of contents
 
 - [Project Architecture](#project-architecture)
-- [Consul Disovery Service](#eureka-disovery-service)
-- [Order Service](#invoice-service)
+- [Consul Disovery Service](#consul-disovery-service)
+- [Order Service](#order-service)
 
 ## Project Architecture
 
