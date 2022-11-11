@@ -25,7 +25,7 @@ In this project we have the following services:
         I will get customer and product details if any order ask me about them 🤷‍♂️
 
     4. Consul Disovery Service :
-        I will holds the information about customer and invoice services 😎
+        I will holds the information about all other services 😎
 
     5. Gateway :
         Your clients will send me their requests, then I will send it to the wanted service 😜
