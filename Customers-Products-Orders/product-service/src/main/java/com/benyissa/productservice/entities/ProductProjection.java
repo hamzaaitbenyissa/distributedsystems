@@ -9,7 +9,7 @@ public interface ProductProjection {
 
     public String getName();
 
-    public Integer getQuantity();
+    public Integer getQuantityStock();
 
     public Double getPrice();
 
