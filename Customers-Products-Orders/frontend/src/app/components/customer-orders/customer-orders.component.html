@@ -1,0 +1,62 @@
+<ng-container *ngIf="orders; else failureOrLading">
+    <div class="container">
+        <div class="row rowPanel">
+            <div class="col-md-offset-1 col-md-12">
+                <div class="panel">
+                    <div class="panel-body table-responsive">
+                        <table class="table" style="text-align:center">
+                            <thead>
+                                <tr>
+                                    <th>ID</th>
+                                    <th>Status</th>
+                                    <th>costumerId</th>
+                                    <th>createdAt</th>
+                                    <th>updatedAt</th>
+                                    <th></th>
+                                </tr>
+                            </thead>
+                            <tbody>
+
+                                <tr *ngFor="let order of orders">
+                                    <td>{{order.id}}</td>
+                                    <td>{{order.status}}</td>
+                                    <td>{{order.costumerId}}</td>
+                                    <td>{{order.createdAt |date:'dd-MM-yyyy:HH-mm-ss'}}</td>
+                                    <td>{{order.updatedAt |date:'dd-MM-yyyy:HH-mm-ss'}}</td>
+                                    <td>
+                                        <ul class="action-list">
+
+                                            <li>
+                                                <a (click)="checkOrderDetails(order)" class="btn btn-outline-primary">
+                                                    Deatils
+                                                </a>
+
+
+                                            </li>
+                                        </ul>
+                                    </td>
+                                </tr>
+
+                            </tbody>
+                        </table>
+
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+
+</ng-container>
+
+<ng-template #failureOrLading>
+    <ng-container *ngIf="errorMessage; else loading">
+        <div class="text-danger container">
+            {{errorMessage}}
+        </div>
+    </ng-container>
+    <ng-template #loading>
+        <h1 class="container">
+            Loading ......
+        </h1>
+    </ng-template>
+</ng-template>

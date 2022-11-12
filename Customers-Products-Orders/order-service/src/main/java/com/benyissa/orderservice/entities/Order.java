@@ -26,10 +26,19 @@ public class Order {
     Long costumerId;
     Date createdAt;
     Date updatedAt;
+    Double total;
     @OneToMany(mappedBy = "order")
     List<ProductItem> orderedProducts;
 
     // we can do that using dto , this annotation tells JPA please don't care about this attribute
     @Transient
     Customer customer;
+
+    public Double getTotal() {
+        Double total = 0.0;
+        for (ProductItem productItem : getOrderedProducts()) {
+            total += productItem.getAmount();
+        }
+        return total;
+    }
 }

@@ -22,6 +22,8 @@ public class ProductItem {
     Long productId;
     Integer quantity;
     Double discount;
+    Double price;
+    Double amount;
     @ManyToOne
     @JsonIgnore
     Order order;
@@ -29,4 +31,8 @@ public class ProductItem {
     // we can do that using dto , this annotation tells JPA please don't care about this attribute
     @Transient
     Product product;
+
+    public Double getAmount() {
+        return price * (1 - discount) * quantity;
+    }
 }

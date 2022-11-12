@@ -1,0 +1,74 @@
+<ng-container *ngIf="products; else failureOrLading">
+    <div class="container">
+        <div class="row rowPanel">
+            <div class="col-md-offset-1 col-md-12">
+                <div class="panel">
+                    <div class="panel-heading">
+                        <div class="row">
+                            <div class="col-sm-9 col-xs-12 text-right">
+                                <div class="btn_group">
+                                    <form [formGroup]="myForm" (ngSubmit)="handleSearchProducts()">
+                                        <input placeholder="Search" name="keyword" id="keyword"
+                                            formControlName="keyword" type="text" class="form-control" />
+                                        <button class="btn btn-default" type="submit" title="search">
+                                            <i class="bi bi-search"></i>
+                                        </button>
+                                    </form>
+                                </div>
+                            </div>
+
+                            <div class="col col-sm-3 col-xs-12">
+                                <h4 class="AddSection">
+                                    <a [routerLink]="['/addproduct']">
+                                        Add product <i class="bi bi-person-plus"></i></a>
+                                </h4>
+                            </div>
+
+                        </div>
+                    </div>
+                    <div class="panel-body table-responsive">
+                        <table class="table" style="text-align:center">
+                            <thead>
+                                <tr>
+
+                                    <th>ID</th>
+                                    <th>Name</th>
+                                    <th>Price</th>
+                                    <th>Quantity</th>
+
+                                </tr>
+                            </thead>
+                            <tbody>
+
+                                <tr *ngFor="let product of products">
+                                    <td>{{product.id}}</td>
+                                    <td>{{product.name}}</td>
+                                    <td>{{product.price | currency}}</td>
+                                    <td>{{product.quantityStock}}</td>
+                                </tr>
+
+                            </tbody>
+                        </table>
+
+
+
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+
+</ng-container>
+
+<ng-template #failureOrLading>
+    <ng-container *ngIf="errorMessage; else loading">
+        <div class="text-danger container">
+            {{errorMessage}}
+        </div>
+    </ng-container>
+    <ng-template #loading>
+        <h1 class="container">
+            Loading ......
+        </h1>
+    </ng-template>
+</ng-template>

@@ -25,11 +25,8 @@ public class ProductServiceApplication {
             Faker faker = new Faker();
             for (int i = 0; i < 20; i++) {
                 String name = faker.commerce().productName();
-                productRepo.save(Product.builder().name(name).price(Math.random() * 101 + 23).quantityStock(new Random().nextInt()).build());
+                productRepo.save(Product.builder().name(name).price(Math.random() * 101 + 23).quantityStock(new Random().nextInt(0, 100)).build());
             }
         };
-
-
     }
-
 }

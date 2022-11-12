@@ -1,0 +1,100 @@
+<div class="container mt-2 ">
+    <div class="row rowPanel">
+        <div class="col col-md-4">
+            <div class="panel">
+                <div class="panel-heading">
+                    <div class="row">
+                        <div class="col col-md-12 text-center">
+                        </div>
+                    </div>
+                </div>
+
+                <ng-container *ngIf="order">
+                    <div class="panel-body table-responsive">
+                        <div class="mb-2">
+                            <h6 class="text-center display-5 text-white">
+                                Order : <strong>{{order.id}}</strong>
+                            </h6>
+                        </div>
+                        <table class="table" style="text-align:center">
+
+                            <thead>
+                                <tr>
+                                    <th>costumerId</th>
+                                    <th class="text-white">{{order.costumerId}}</th>
+                                </tr>
+                            </thead>
+
+                            <thead>
+                                <tr>
+                                    <th>Status</th>
+                                    <th class="text-white">{{order.status}}</th>
+                                </tr>
+                            </thead>
+
+                            <thead>
+                                <tr>
+                                    <th>createdAt</th>
+                                    <th class="text-white">{{order.createdAt |date:'dd-MM-yyyy:HH-mm-ss'}}</th>
+                                </tr>
+                            </thead>
+
+                            <thead>
+                                <tr>
+                                    <th>updatedAt</th>
+                                    <th class="text-white">{{order.updatedAt |date:'dd-MM-yyyy:HH-mm-ss'}}</th>
+                                </tr>
+                            </thead>
+
+                            <thead>
+                                <tr>
+                                    <th>Total</th>
+                                    <th class="text-white"><strong>{{order.total |currency}}</strong></th>
+
+                                </tr>
+                            </thead>
+
+                        </table>
+                    </div>
+                </ng-container>
+
+            </div>
+        </div>
+        <div class="col col-md-8">
+            <div class="panel">
+                <div class="panel-heading">
+                    <h2 class="text-center  display-5 text-white">{{order.orderedProducts.length}} Product Items</h2>
+                </div>
+                <div class="panel-body table-responsive">
+
+                    <table class="table" style="text-align:center">
+                        <thead>
+                            <tr>
+
+                                <th>ID</th>
+                                <th>Name</th>
+                                <th>Price</th>
+                                <th>Quantity</th>
+                                <th>Discount</th>
+                                <th>Amount</th>
+
+                            </tr>
+                        </thead>
+                        <tbody>
+
+                            <tr *ngFor="let product of order.orderedProducts">
+                                <td>{{product.id}}</td>
+                                <td>{{product.product.name}}</td>
+                                <td>{{product.product.price |currency}}</td>
+                                <td>{{product.quantity}}</td>
+                                <td>{{product.discount | percent}}</td>
+                                <td>{{product.amount |currency}}</td>
+                            </tr>
+                        </tbody>
+                    </table>
+
+                </div>
+            </div>
+        </div>
+    </div>
+</div>

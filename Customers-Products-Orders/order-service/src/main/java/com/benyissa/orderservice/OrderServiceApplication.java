@@ -50,8 +50,9 @@ public class OrderServiceApplication {
                         ProductItem newProductItem = ProductItem.builder()
                                 .order(newOrder)
                                 .productId(products.get(i).getId())
-                                .quantity(random.nextInt(3))
-                                .discount(random.nextDouble(100))
+                                .price(products.get(i).getPrice())
+                                .quantity(random.nextInt(10))
+                                .discount(random.nextDouble(1))
                                 .build();
                         productItemRepo.save(newProductItem);
                     }

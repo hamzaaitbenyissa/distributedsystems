@@ -23,7 +23,7 @@ public class OrderRestController {
     ProductItemRepo productItemRepo;
 
 //    get all details about a product
-    @GetMapping("fullorder/{id}")
+    @GetMapping("fullOrder/{id}")
     Order getFullOrder(@PathVariable Long id) {
         Order order = orderRepo.findById(id).get();
         Customer customer = customerRestClient.getCustomerById(order.getCostumerId());
