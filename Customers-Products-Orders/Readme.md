@@ -1,12 +1,13 @@
 # Micro Services Architecture-Consul-Config- Gateway-Feign-Resilience4J
 
-orders - customers - products  Microservices using Spring boot and consul.
+orders - customers - products Microservices using Spring boot and consul.
 
 ## Table of contents
 
 - [Project Architecture](#project-architecture)
 - [Consul Disovery Service](#consul-disovery-service)
 - [Order Service](#order-service)
+- [Frontend](#frontend)
 
 ## Project Architecture
 
@@ -19,7 +20,7 @@ In this project we have the following services:
         I will be here for handling CRUD operations for invoices ✔
 
     2. Order service :
-        I will be here for handling CRUD operations for orders ✔        
+        I will be here for handling CRUD operations for orders ✔
 
     3. OpenFeign :
         I will get customer and product details if any order ask me about them 🤷‍♂️
@@ -34,8 +35,8 @@ In this project we have the following services:
 <img src="./main/demo/arch.png" width="1000px">
 <br>
 
-
 ## Consul Disovery Service
+
 <br>
 First, let's run our services :
 
@@ -50,17 +51,32 @@ then let's check them in the consul interface :
 <img src="./main/demo/consul.png" width="1000px">
 <br>
 
-
-
 ## Order Service
 
 <br>
 <img src="./main/demo/3.png" width="1000px">
 <br>
 
-
 <br>
 <img src="./main/demo/4.png" width="1000px">
+<br>
+
+## Frontend
+
+<br>
+<img src="./frontend/demo/4.png" width="1000px">
+<br>
+
+<br>
+<img src="./frontend/demo/3.png" width="1000px">
+<br>
+
+<br>
+<img src="./frontend/demo/1.png" width="1000px">
+<br>
+
+<br>
+<img src="./frontend/demo/2.png" width="1000px">
 <br>
 
 ## 🔗 About me :
