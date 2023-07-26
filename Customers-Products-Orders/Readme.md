@@ -31,10 +31,6 @@ In this project we have the following services:
     5. Gateway :
         Your clients will send me their requests, then I will send it to the wanted service 😜
 
-<br>
-<img src="./main/demo/arch.png" width="1000px">
-<br>
-
 ## Consul Disovery Service
 
 <br>
